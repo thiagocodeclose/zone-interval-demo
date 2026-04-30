@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="en" class="__variable_d758cf __variable_f367f3"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/6c25f6e897d845a3-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/static/media/e4af272ccee01ff0-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="stylesheet" href="/_next/static/css/13fa91f85db00cfe.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-15f5e1248330e8d3.js"/><script src="/_next/static/chunks/fd9d1056-49ca28257eb7a92c.js" async=""></script><script src="/_next/static/chunks/117-8db81c3126b3333a.js" async=""></script><script src="/_next/static/chunks/main-app-391c06b2f63a1063.js" async=""></script><script src="/_next/static/chunks/app/page-a042d96f25a864e1.js" async=""></script><title>Zone Interval Studio — Heart-Rate Training · Austin, TX</title><meta name="description" content="Austin&#x27;s most data-driven interval training studio. 5 zones. 45 minutes. Proven results."/><meta name="next-size-adjust"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><style>
+  :root {
+    --zn-bg: #0A0A0A;
+    --zn-surface: #121212;
+    --zn-card: #1A1A1A;
+    --zn-primary: #FF6B00;
+    --zn-primary-light: #FF8C33;
+    --zn-accent: #FFB347;
+    --zn-text: #F5F5F0;
+    --zn-muted: rgba(245,245,240,0.55);
+    --zn-border: rgba(255,107,0,0.12);
+    --font-display: var(--font-bebas), 'Bebas Neue', sans-serif;
+    --font-body: var(--font-inter), 'Inter', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--zn-bg); color: var(--zn-text); overflow-x: hidden; }
+
+  /* NAV */
+  .zn-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem; height: 68px;
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+  .zn-nav.scrolled {
+    background: rgba(10,10,10,0.97);
+    box-shadow: 0 1px 24px rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
+  }
+  .zn-nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.8rem; letter-spacing: 0.08em;
+    color: var(--zn-text); text-decoration: none;
+  }
+  .zn-nav-logo span { color: var(--zn-primary); }
+  .zn-nav-links { display: flex; gap: 2rem; align-items: center; }
+  .zn-nav-links a {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--zn-muted); text-decoration: none; transition: color 0.2s;
+  }
+  .zn-nav-links a:hover { color: var(--zn-primary); }
+  .zn-btn-nav {
+    background: var(--zn-primary); color: var(--zn-bg);
+    padding: 0.5rem 1.4rem;
+    font-family: var(--font-display);
+    font-size: 1rem; letter-spacing: 0.08em;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .zn-btn-nav:hover { background: var(--zn-primary-light); }
+
+  /* CINEMATIC VIDEO HERO */
+  .zn-video-hero {
+    position: relative;
+    height: 70vh; min-height: 540px;
+    overflow: hidden;
+  }
+  .zn-video-hero video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .zn-video-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10,10,10,0.05) 0%,
+      rgba(10,10,10,0.3) 55%,
+      rgba(10,10,10,0.95) 100%
+    );
+  }
+  /* HR pulse bars overlaid on video — decorative */
+  .zn-pulse-bars {
+    position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
+    display: flex; align-items: flex-end; gap: 4px;
+  }
+  .zn-bar {
+    width: 4px; background: var(--zn-primary);
+    border-radius: 2px;
+    animation: zn-bar-pulse 1.4s ease-in-out infinite;
+    opacity: 0.9;
+  }
+  @keyframes zn-bar-pulse {
+    0%, 100% { transform: scaleY(0.3); }
+    50% { transform: scaleY(1); }
+  }
+
+  /* HERO CONTENT — below video */
+  .zn-hero-content {
+    background: var(--zn-bg); padding: 3.5rem 2rem 5rem;
+    position: relative;
+  }
+  .zn-hero-content::before {
+    content: '';
+    position: absolute; top: -70px; left: 0; right: 0; height: 70px;
+    background: linear-gradient(to bottom, transparent, var(--zn-bg));
+    pointer-events: none;
+  }
+  .zn-hero-content-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .zn-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 8vw, 8rem);
+    letter-spacing: 0.03em; text-transform: uppercase;
+    color: var(--zn-text); line-height: 0.9;
+  }
+  .zn-hero-title span { color: var(--zn-primary); display: block; }
+  .zn-hero-right {}
+  .zn-hero-tag {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--zn-primary); margin-bottom: 1rem; display: block;
+  }
+  .zn-hero-sub { font-size: 1rem; line-height: 1.8; color: var(--zn-muted); margin-bottom: 2rem; }
+  .zn-hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .zn-btn-primary {
+    background: var(--zn-primary); color: var(--zn-bg);
+    padding: 0.9rem 2rem;
+    font-family: var(--font-display);
+    font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s, transform 0.2s;
+  }
+  .zn-btn-primary:hover { background: var(--zn-primary-light); transform: translateY(-2px); }
+  .zn-btn-outline {
+    border: 2px solid rgba(245,245,240,0.15); color: var(--zn-muted);
+    padding: 0.9rem 2rem;
+    font-family: var(--font-display);
+    font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .zn-btn-outline:hover { border-color: var(--zn-primary); color: var(--zn-primary); }
+
+  /* STATS STRIP */
+  .zn-stats-strip { background: var(--zn-primary); padding: 2rem; }
+  .zn-stats-inner {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); text-align: center;
+  }
+  .zn-stat-value {
+    font-family: var(--font-display);
+    font-size: 2.4rem; letter-spacing: 0.04em;
+    color: var(--zn-bg); margin-bottom: 0.2rem;
+  }
+  .zn-stat-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.65); }
+
+  /* SECTIONS */
+  section { padding: 6rem 2rem; }
+  .zn-section-tag {
+    font-family: var(--font-display);
+    font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--zn-primary); margin-bottom: 0.5rem; display: inline-block;
+  }
+  .zn-section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    text-transform: uppercase; letter-spacing: 0.03em;
+    color: var(--zn-text); line-height: 0.95; margin-bottom: 1rem;
+  }
+  .zn-section-sub { font-size: 1rem; line-height: 1.8; color: var(--zn-muted); max-width: 540px; }
+
+  /* ZONES */
+  .zn-zones-section { background: var(--zn-surface); }
+  .zn-zones-inner { max-width: 1200px; margin: 0 auto; }
+  .zn-zones-header { margin-bottom: 3rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem; }
+  .zn-zones-list { display: flex; flex-direction: column; gap: 1px; background: rgba(255,107,0,0.06); }
+  .zn-zone-row {
+    background: var(--zn-card);
+    display: grid; grid-template-columns: 60px 180px 1fr auto;
+    gap: 2rem; align-items: center;
+    padding: 1.75rem 2rem;
+    transition: background 0.2s;
+  }
+  .zn-zone-row:hover { background: #202020; }
+  .zn-zone-num {
+    font-family: var(--font-display);
+    font-size: 3rem; letter-spacing: 0; opacity: 0.18; line-height: 1;
+  }
+  .zn-zone-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--zn-text);
+  }
+  .zn-zone-range {
+    font-size: 0.78rem; font-weight: 600; color: var(--zn-muted);
+    letter-spacing: 0.05em; text-transform: uppercase; margin-top: 0.25rem;
+  }
+  .zn-zone-desc { font-size: 0.9rem; line-height: 1.65; color: var(--zn-muted); }
+  .zn-zone-dot {
+    width: 16px; height: 16px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* CLASSES */
+  .zn-classes-section { background: var(--zn-bg); }
+  .zn-classes-inner { max-width: 1200px; margin: 0 auto; }
+  .zn-classes-header { margin-bottom: 3rem; }
+  .zn-classes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,107,0,0.06); border: 1px solid rgba(255,107,0,0.06); }
+  .zn-class-cell {
+    background: var(--zn-card); padding: 2rem;
+    position: relative; overflow: hidden;
+    transition: background 0.2s;
+  }
+  .zn-class-cell:hover { background: #202020; }
+  .zn-class-cell::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--zn-primary);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .zn-class-cell:hover::after { transform: scaleX(1); }
+  .zn-class-badges { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+  .zn-badge {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+  }
+  .zn-badge-level { background: rgba(255,107,0,0.12); color: var(--zn-primary); }
+  .zn-badge-dur { background: rgba(245,245,240,0.06); color: var(--zn-muted); }
+  .zn-class-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--zn-text); margin-bottom: 0.75rem;
+  }
+  .zn-class-desc { font-size: 0.88rem; line-height: 1.65; color: var(--zn-muted); }
+
+  /* PRICING */
+  .zn-pricing-section { background: var(--zn-surface); }
+  .zn-pricing-inner { max-width: 1100px; margin: 0 auto; }
+  .zn-pricing-header { text-align: center; margin-bottom: 3.5rem; }
+  .zn-pricing-header .zn-section-sub { margin: 0 auto; }
+  .zn-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,107,0,0.06); border: 1px solid rgba(255,107,0,0.06); }
+  .zn-price-card {
+    background: var(--zn-card); padding: 2.5rem 2rem;
+    position: relative;
+  }
+  .zn-price-card.highlight { background: #1A0F00; border-left: 2px solid var(--zn-primary); border-right: 2px solid var(--zn-primary); }
+  .zn-popular-badge {
+    position: absolute; top: 0; left: 0; right: 0;
+    background: var(--zn-primary);
+    font-family: var(--font-display);
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--zn-bg); text-align: center; padding: 0.3rem;
+  }
+  .zn-price-name {
+    font-family: var(--font-display);
+    font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--zn-muted); margin-bottom: 0.75rem; margin-top: 1.5rem;
+  }
+  .zn-price-card.highlight .zn-price-name { margin-top: 2.5rem; }
+  .zn-price-amount {
+    font-family: var(--font-display);
+    font-size: 3.2rem; color: var(--zn-primary); line-height: 1; margin-bottom: 0.2rem;
+  }
+  .zn-price-period { font-size: 0.82rem; color: var(--zn-muted); margin-bottom: 1.75rem; }
+  .zn-price-features { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
+  .zn-price-features li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: var(--zn-muted); }
+  .zn-check { color: var(--zn-primary); flex-shrink: 0; font-weight: 700; }
+  .zn-price-cta {
+    display: block; text-align: center; padding: 0.9rem;
+    font-family: var(--font-display);
+    font-size: 0.95rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .zn-price-card.highlight .zn-price-cta { background: var(--zn-primary); color: var(--zn-bg); }
+  .zn-price-card.highlight .zn-price-cta:hover { background: var(--zn-primary-light); }
+  .zn-price-card:not(.highlight) .zn-price-cta { border: 1px solid rgba(245,245,240,0.12); color: var(--zn-muted); }
+  .zn-price-card:not(.highlight) .zn-price-cta:hover { border-color: var(--zn-primary); color: var(--zn-primary); }
+
+  /* CTA */
+  .zn-cta-section { background: var(--zn-bg); text-align: center; padding: 7rem 2rem; position: relative; overflow: hidden; }
+  .zn-cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,107,0,0.08) 0%, transparent 100%);
+  }
+  .zn-cta-inner { max-width: 640px; margin: 0 auto; position: relative; }
+  .zn-cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    text-transform: uppercase; letter-spacing: 0.03em;
+    color: var(--zn-text); line-height: 0.9; margin-bottom: 1.25rem;
+  }
+  .zn-cta-title span { color: var(--zn-primary); display: block; }
+  .zn-cta-sub { font-size: 1rem; color: var(--zn-muted); margin-bottom: 2.5rem; line-height: 1.75; }
+  .zn-btn-cta {
+    background: var(--zn-primary); color: var(--zn-bg);
+    padding: 1.1rem 3rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .zn-btn-cta:hover { background: var(--zn-primary-light); transform: translateY(-2px); }
+
+  /* FOOTER */
+  .zn-footer { background: #060606; padding: 4rem 2rem 2rem; }
+  .zn-footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+  .zn-footer-logo { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.08em; color: var(--zn-text); margin-bottom: 0.75rem; }
+  .zn-footer-logo span { color: var(--zn-primary); }
+  .zn-footer-desc { font-size: 0.88rem; line-height: 1.6; color: var(--zn-muted); max-width: 280px; }
+  .zn-footer-h { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,245,240,0.28); margin-bottom: 1rem; }
+  .zn-footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .zn-footer-links a { color: var(--zn-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+  .zn-footer-links a:hover { color: var(--zn-primary); }
+  .zn-footer-bottom {
+    max-width: 1200px; margin: 2.5rem auto 0;
+    padding-top: 2rem; border-top: 1px solid rgba(245,245,240,0.06);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.78rem; color: var(--zn-muted); flex-wrap: wrap; gap: 0.5rem;
+  }
+  .zn-footer-brand { color: var(--zn-primary); text-decoration: none; font-weight: 700; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .zn-hero-content-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .zn-zone-row { grid-template-columns: 40px 1fr; }
+    .zn-zone-desc, .zn-zone-dot { display: none; }
+    .zn-classes-grid { grid-template-columns: 1fr; }
+    .zn-pricing-grid { grid-template-columns: 1fr; }
+    .zn-stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .zn-footer-inner { grid-template-columns: 1fr; }
+    .zn-nav-links { display: none; }
+  }
+</style><nav class="zn-nav"><a href="#" class="zn-nav-logo">ZO<span>NE</span></a><div class="zn-nav-links"><a href="#zones">The Zones</a><a href="#classes">Classes</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a><a href="#intro" class="zn-btn-nav">Try For $49</a></div></nav><div id="intro" class="zn-video-hero"><video autoPlay="" muted="" loop="" playsInline="" poster="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1800&amp;q=80"><source src="https://assets.mixkit.co/videos/preview/mixkit-woman-running-on-a-treadmill-in-a-gym-43696-large.mp4" type="video/mp4"/></video><div class="zn-video-overlay"></div><div class="zn-pulse-bars"><div class="zn-bar" style="height:16px;animation-delay:0s"></div><div class="zn-bar" style="height:24px;animation-delay:0.07s"></div><div class="zn-bar" style="height:32px;animation-delay:0.14s"></div><div class="zn-bar" style="height:40px;animation-delay:0.21000000000000002s"></div><div class="zn-bar" style="height:52px;animation-delay:0.28s"></div><div class="zn-bar" style="height:64px;animation-delay:0.35000000000000003s"></div><div class="zn-bar" style="height:52px;animation-delay:0.42000000000000004s"></div><div class="zn-bar" style="height:40px;animation-delay:0.49000000000000005s"></div><div class="zn-bar" style="height:56px;animation-delay:0.56s"></div><div class="zn-bar" style="height:36px;animation-delay:0.6300000000000001s"></div><div class="zn-bar" style="height:24px;animation-delay:0.7000000000000001s"></div><div class="zn-bar" style="height:48px;animation-delay:0.77s"></div><div class="zn-bar" style="height:60px;animation-delay:0.8400000000000001s"></div><div class="zn-bar" style="height:44px;animation-delay:0.9100000000000001s"></div><div class="zn-bar" style="height:32px;animation-delay:0.9800000000000001s"></div><div class="zn-bar" style="height:20px;animation-delay:1.05s"></div><div class="zn-bar" style="height:36px;animation-delay:1.12s"></div><div class="zn-bar" style="height:52px;animation-delay:1.1900000000000002s"></div><div class="zn-bar" style="height:40px;animation-delay:1.2600000000000002s"></div><div class="zn-bar" style="height:28px;animation-delay:1.33s"></div></div></div><div class="zn-hero-content"><div class="zn-hero-content-inner"><h1 class="zn-hero-title">Find Your<br/><span>Zone.</span></h1><div class="zn-hero-right"><span class="zn-hero-tag">Heart-Rate Training · Austin, TX</span><p class="zn-hero-sub">Data-driven interval training that puts you in the right zone at the right time. 45 minutes. 5 zones. Measurable progress every single session.</p><div class="zn-hero-actions"><a href="#pricing" class="zn-btn-primary">Start for $49</a><a href="#zones" class="zn-btn-outline">Learn The Zones</a></div></div></div></div><div class="zn-stats-strip"><div class="zn-stats-inner"><div class="reveal" style="transition-delay:0ms"><div class="zn-stat-value">5</div><div class="zn-stat-label">Heart-Rate Zones</div></div><div class="reveal" style="transition-delay:80ms"><div class="zn-stat-value">45</div><div class="zn-stat-label">Min Per Class</div></div><div class="reveal" style="transition-delay:160ms"><div class="zn-stat-value">500+</div><div class="zn-stat-label">Calories Burned</div></div><div class="reveal" style="transition-delay:240ms"><div class="zn-stat-value">36hr</div><div class="zn-stat-label">Afterburn Effect</div></div></div></div><section id="zones" class="zn-zones-section"><div class="zn-zones-inner"><div class="zn-zones-header reveal"><div><span class="zn-section-tag">Heart-Rate Science</span><h2 class="zn-section-title">The Five<br/>Zones</h2></div><p class="zn-section-sub">Each zone triggers a different physiological response. Train them all, in the right sequence, and you build a complete athlete.</p></div><div class="zn-zones-list"><div class="zn-zone-row reveal" style="transition-delay:0ms"><div class="zn-zone-num" style="color:#4ECDC4">1</div><div><div class="zn-zone-name">Active Recovery</div><div class="zn-zone-range">50–60% MHR</div></div><p class="zn-zone-desc">Warm-up and cool-down. Steady breathing, minimal effort. Primes your cardiovascular system.</p><div class="zn-zone-dot" style="background:#4ECDC4"></div></div><div class="zn-zone-row reveal" style="transition-delay:70ms"><div class="zn-zone-num" style="color:#95E96A">2</div><div><div class="zn-zone-name">Aerobic Base</div><div class="zn-zone-range">60–70% MHR</div></div><p class="zn-zone-desc">Building your engine. Fat-burning zone. You can hold a conversation — barely.</p><div class="zn-zone-dot" style="background:#95E96A"></div></div><div class="zn-zone-row reveal" style="transition-delay:140ms"><div class="zn-zone-num" style="color:#FFD93D">3</div><div><div class="zn-zone-name">Threshold</div><div class="zn-zone-range">70–80% MHR</div></div><p class="zn-zone-desc">The sweet spot. Aerobic and anaerobic converge. Maximum sustainable effort.</p><div class="zn-zone-dot" style="background:#FFD93D"></div></div><div class="zn-zone-row reveal" style="transition-delay:210ms"><div class="zn-zone-num" style="color:#FF9A3C">4</div><div><div class="zn-zone-name">Lactate</div><div class="zn-zone-range">80–90% MHR</div></div><p class="zn-zone-desc">Pushing past comfortable. Lactic acid accumulates. Short bursts. Big results.</p><div class="zn-zone-dot" style="background:#FF9A3C"></div></div><div class="zn-zone-row reveal" style="transition-delay:280ms"><div class="zn-zone-num" style="color:#FF6B00">5</div><div><div class="zn-zone-name">Max Effort</div><div class="zn-zone-range">90–100% MHR</div></div><p class="zn-zone-desc">Everything you have. 10–30 seconds. This is where transformation happens.</p><div class="zn-zone-dot" style="background:#FF6B00"></div></div></div></div></section><section id="classes" class="zn-classes-section"><div class="zn-classes-inner"><div class="zn-classes-header reveal"><span class="zn-section-tag">Class Formats</span><h2 class="zn-section-title">Your Next<br/>45 Minutes</h2><p class="zn-section-sub">Every format uses heart-rate tracking. Every session generates a personal performance report. Every visit makes you better.</p></div><div class="zn-classes-grid"><div class="zn-class-cell reveal" style="transition-delay:0ms"><div class="zn-class-badges"><span class="zn-badge zn-badge-level">All Levels</span><span class="zn-badge zn-badge-dur">45 min</span></div><div class="zn-class-name">Zone 45</div><p class="zn-class-desc">The signature class. HR monitor required. Guided through all 5 zones with treadmills and rowers.</p></div><div class="zn-class-cell reveal" style="transition-delay:60ms"><div class="zn-class-badges"><span class="zn-badge zn-badge-level">All Levels</span><span class="zn-badge zn-badge-dur">30 min</span></div><div class="zn-class-name">Zone Express</div><p class="zn-class-desc">A faster hit. High-intensity intervals with no zone 1 or 2. Perfect for lunch breaks or add-ons.</p></div><div class="zn-class-cell reveal" style="transition-delay:120ms"><div class="zn-class-badges"><span class="zn-badge zn-badge-level">Intermediate</span><span class="zn-badge zn-badge-dur">45 min</span></div><div class="zn-class-name">Strength Zone</div><p class="zn-class-desc">Interval training applied to resistance. Dumbbells, cables, TRX — all with HR tracking.</p></div><div class="zn-class-cell reveal" style="transition-delay:180ms"><div class="zn-class-badges"><span class="zn-badge zn-badge-level">Advanced</span><span class="zn-badge zn-badge-dur">60 min</span></div><div class="zn-class-name">Zone Endurance</div><p class="zn-class-desc">Long, sustained threshold work. Build your aerobic base while maintaining high output.</p></div><div class="zn-class-cell reveal" style="transition-delay:240ms"><div class="zn-class-badges"><span class="zn-badge zn-badge-level">Beginner</span><span class="zn-badge zn-badge-dur">45 min</span></div><div class="zn-class-name">Zone Intro</div><p class="zn-class-desc">Your first class. Coach-led orientation with HR monitor setup and personal zone calibration.</p></div><div class="zn-class-cell reveal" style="transition-delay:300ms"><div class="zn-class-badges"><span class="zn-badge zn-badge-level">All Levels</span><span class="zn-badge zn-badge-dur">30 min</span></div><div class="zn-class-name">Zone Recovery</div><p class="zn-class-desc">Active recovery in zone 1–2. Mobility, stretching, and slow cardio. The class you need the day after zone 5.</p></div></div></div></section><section id="pricing" class="zn-pricing-section"><div class="zn-pricing-inner"><div class="zn-pricing-header reveal"><span class="zn-section-tag">Membership Options</span><h2 class="zn-section-title">Start Training<br/>Today</h2><p class="zn-section-sub">New members: 2 weeks unlimited for $49. HR monitor included. No commitment.</p></div><div class="zn-pricing-grid"><div class="zn-price-card reveal" style="transition-delay:0ms"><div class="zn-price-name">Intro Pack</div><div class="zn-price-amount">$49</div><div class="zn-price-period">first 2 weeks</div><ul class="zn-price-features"><li><span class="zn-check">→</span>Unlimited classes</li><li><span class="zn-check">→</span>HR monitor rental</li><li><span class="zn-check">→</span>1 coaching check-in</li><li><span class="zn-check">→</span>App access</li></ul><a href="#intro" class="zn-price-cta">Get Started</a></div><div class="zn-price-card reveal highlight" style="transition-delay:100ms"><span class="zn-popular-badge">Most Popular</span><div class="zn-price-name">Unlimited</div><div class="zn-price-amount">$129</div><div class="zn-price-period">per month</div><ul class="zn-price-features"><li><span class="zn-check">→</span>All classes unlimited</li><li><span class="zn-check">→</span>Included HR monitor</li><li><span class="zn-check">→</span>Zone performance tracking</li><li><span class="zn-check">→</span>Monthly progress report</li><li><span class="zn-check">→</span>Guest pass (2/month)</li></ul><a href="#intro" class="zn-price-cta">Get Started</a></div><div class="zn-price-card reveal" style="transition-delay:200ms"><div class="zn-price-name">8-Class Pack</div><div class="zn-price-amount">$119</div><div class="zn-price-period">use within 60 days</div><ul class="zn-price-features"><li><span class="zn-check">→</span>8 class credits</li><li><span class="zn-check">→</span>HR monitor rental included</li><li><span class="zn-check">→</span>Zone performance tracking</li><li><span class="zn-check">→</span>No expiry extensions</li></ul><a href="#intro" class="zn-price-cta">Get Started</a></div></div></div></section><section class="zn-cta-section"><div class="zn-cta-inner"><h2 class="zn-cta-title reveal">Enter The<br/><span>Zone.</span></h2><p class="zn-cta-sub reveal">Two weeks unlimited. Heart-rate monitor included. Personal zone calibration on day one. $49 — no catch, no contract.</p><a href="#pricing" class="zn-btn-cta reveal">Start for $49</a></div></section><footer id="contact" class="zn-footer"><div class="zn-footer-inner"><div><div class="zn-footer-logo">ZO<span>NE</span> Studio</div><p class="zn-footer-desc">2205 S Lamar Blvd, Austin, TX 78704<br/>(512) 555-0376<br/>burn@zonestudio.com</p></div><div><div class="zn-footer-h">Train</div><ul class="zn-footer-links"><li><a href="#classes">Schedule</a></li><li><a href="#zones">The Zones</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#">HR Technology</a></li></ul></div><div><div class="zn-footer-h">Info</div><ul class="zn-footer-links"><li><a href="#">New Members</a></li><li><a href="#">FAQs</a></li><li><a href="#">Corporate Wellness</a></li><li><a href="#">Privacy Policy</a></li></ul></div></div><div class="zn-footer-bottom"><span>© <!-- -->2026<!-- --> Zone Interval Studio. All rights reserved.</span><span>Powered by <a href="https://koriva.com" class="zn-footer-brand">Koriva</a></span></div></footer><script src="/_next/static/chunks/webpack-15f5e1248330e8d3.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/media/6c25f6e897d845a3-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n2:HL[\"/_next/static/media/e4af272ccee01ff0-s.p.woff2\",\"font\",{\"crossOrigin\":\"\",\"type\":\"font/woff2\"}]\n3:HL[\"/_next/static/css/13fa91f85db00cfe.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"4:I[2846,[],\"\"]\n6:I[9107,[],\"ClientPageRoot\"]\n7:I[552,[\"931\",\"static/chunks/app/page-a042d96f25a864e1.js\"],\"default\",1]\n8:I[4707,[],\"\"]\n9:I[6423,[],\"\"]\nb:I[1060,[],\"\"]\nc:[]\n"])</script><script>self.__next_f.push([1,"0:[\"$\",\"$L4\",null,{\"buildId\":\"nP7I-5rhGTRXY60VrF8NX\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"\"],\"initialTree\":[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"__PAGE__\",{},[[\"$L5\",[\"$\",\"$L6\",null,{\"props\":{\"params\":{},\"searchParams\":{}},\"Component\":\"$7\"}],null],null],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/13fa91f85db00cfe.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"__variable_d758cf __variable_f367f3\",\"children\":[\"$\",\"body\",null,{\"children\":[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$La\"],\"globalErrorComponent\":\"$b\",\"missingSlots\":\"$Wc\"}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Zone Interval Studio — Heart-Rate Training · Austin, TX\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Austin's most data-driven interval training studio. 5 zones. 45 minutes. Proven results.\"}],[\"$\",\"meta\",\"4\",{\"name\":\"next-size-adjust\"}]]\n5:null\n"])</script></body></html>
