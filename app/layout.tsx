@@ -4,6 +4,7 @@ import { Bebas_Neue, Inter } from 'next/font/google';
 import './globals.css';
 import { getKorivaConfig, buildCssVars } from '@/lib/koriva-config';
 
+import { KorivaLivePreview } from '@/components/KorivaLivePreview';
 const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
   weight: ['400'],
@@ -21,7 +22,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const vars = buildCssVars(cfg?.brand);
   return (
     <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`} style={vars as React.CSSProperties}>
-      <body>{children}</body>
+      <body>{children}<KorivaLivePreview /></body>
     </html>
   );
 }
