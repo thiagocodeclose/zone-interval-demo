@@ -352,14 +352,24 @@ export function KorivaLivePreview() {
             imgEl.src = content;
           } else {
             root.style.setProperty(`--cg-el-${id}-content`, content);
+            // Direct text mutation — works without useKorivaElement (stubs)
+            if (cgEl && cgEl.tagName !== "INPUT" && cgEl.tagName !== "TEXTAREA") {
+              cgEl.textContent = content;
+            }
           }
         }
-        if (fontSize !== undefined)
+        if (fontSize !== undefined) {
           root.style.setProperty(`--cg-el-${id}-size`, `${fontSize}px`);
-        if (fontWeight !== undefined)
+          if (cgEl) (cgEl as HTMLElement).style.fontSize = `${fontSize}px`;
+        }
+        if (fontWeight !== undefined) {
           root.style.setProperty(`--cg-el-${id}-weight`, fontWeight);
-        if (fontStyle !== undefined)
+          if (cgEl) (cgEl as HTMLElement).style.fontWeight = fontWeight;
+        }
+        if (fontStyle !== undefined) {
           root.style.setProperty(`--cg-el-${id}-style`, fontStyle);
+          if (cgEl) (cgEl as HTMLElement).style.fontStyle = fontStyle;
+        }
         if (fontFamily !== undefined) {
           root.style.setProperty(`--cg-el-${id}-family`, fontFamily);
           if (cgEl) {
@@ -375,10 +385,14 @@ export function KorivaLivePreview() {
             }
           }
         }
-        if (color !== undefined)
+        if (color !== undefined) {
           root.style.setProperty(`--cg-el-${id}-color`, `#${color}`);
-        if (textAlign !== undefined)
+          if (cgEl) (cgEl as HTMLElement).style.color = `#${color}`;
+        }
+        if (textAlign !== undefined) {
           root.style.setProperty(`--cg-el-${id}-align`, textAlign);
+          if (cgEl) (cgEl as HTMLElement).style.textAlign = textAlign;
+        }
         if (visible !== undefined)
           root.style.setProperty(
             `--cg-el-${id}-display`,
