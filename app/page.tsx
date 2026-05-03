@@ -397,7 +397,7 @@ export default function ZonePage() {
       {/* HERO CONTENT — below video */}
       <div className="zn-hero-content">
         <div className="zn-hero-content-inner">
-          <h1 className="zn-hero-title">
+          <h1 data-cg-el="hero_headline_1" className="zn-hero-title">
             Find Your<br /><span>Zone.</span>
           </h1>
           <div className="zn-hero-right">
