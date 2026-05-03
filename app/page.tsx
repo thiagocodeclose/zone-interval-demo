@@ -402,12 +402,12 @@ export default function ZonePage() {
           </h1>
           <div className="zn-hero-right">
             <span className="zn-hero-tag">Heart-Rate Training · Austin, TX</span>
-            <p className="zn-hero-sub">
+            <p data-cg-el="hero_subtitle" className="zn-hero-sub">
               Data-driven interval training that puts you in the right zone at the right time. 45 minutes. 5 zones. Measurable progress every single session.
             </p>
             <div className="zn-hero-actions">
-              <a href="#pricing" className="zn-btn-primary">Start for $49</a>
-              <a href="#zones" className="zn-btn-outline">Learn The Zones</a>
+              <a data-cg-el="hero_cta_primary" href="#pricing" className="zn-btn-primary">Start for $49</a>
+              <a data-cg-el="hero_cta_secondary" href="#zones" className="zn-btn-outline">Learn The Zones</a>
             </div>
           </div>
         </div>
