@@ -214,6 +214,23 @@ export function KorivaLivePreview() {
               social_instagram: (p as any).social_instagram,
               social_facebook: (p as any).social_facebook,
               gym_slug: (p as any).gym_slug,
+              // Integration flags
+              booking_enabled: (p as any).booking_enabled,
+              portal_enabled: (p as any).portal_enabled,
+              announcement_enabled: (p as any).announcement_enabled,
+              // Announcement bar
+              announcement_text: (p as any).announcement_text,
+              announcement_url: (p as any).announcement_url,
+              announcement_bg_color: (p as any).announcement_bg_color,
+              announcement_text_color: (p as any).announcement_text_color,
+              // Contact / hours
+              gym_address: (p as any).gym_address,
+              gym_phone: (p as any).gym_phone,
+              gym_email: (p as any).gym_email,
+              gym_hours: (p as any).gym_hours,
+              // Portal URL
+              portal_url: (p as any).portal_url,
+              base_url: (p as any).base_url,
             },
           }),
         );
