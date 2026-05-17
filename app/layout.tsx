@@ -2,9 +2,9 @@
 import type { Metadata } from 'next';
 import { Bebas_Neue, Inter } from 'next/font/google';
 import './globals.css';
-import { getKorivaConfig, buildCssVars } from '@/lib/koriva-config';
+import { getGarrison365Config, buildCssVars } from '@/lib/garrison365-config';
 
-import { KorivaLivePreview } from '@/components/KorivaLivePreview';
+import { Garrison365LivePreview } from '@/components/Garrison365LivePreview';
 const bebasNeue = Bebas_Neue({
   subsets: ['latin'],
   weight: ['400'],
@@ -18,11 +18,11 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const cfg = await getKorivaConfig();
+  const cfg = await getGarrison365Config();
   const vars = buildCssVars(cfg?.brand);
   return (
     <html lang="en" className={`${bebasNeue.variable} ${inter.variable}`} style={vars as React.CSSProperties}>
-      <body>{children}<KorivaLivePreview /></body>
+      <body>{children}<Garrison365LivePreview /></body>
     </html>
   );
 }

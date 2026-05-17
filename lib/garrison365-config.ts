@@ -1,5 +1,5 @@
 // @ts-nocheck
-// lib/koriva-config.ts — Fetches live config from Koriva Admin Portal (ISR 60s).
+// lib/garrison365-config.ts — Fetches live config from Garrison365 Admin Portal (ISR 60s).
 
 export interface GymInfo {
   name: string; slug: string; address?: string; phone?: string;
@@ -13,22 +13,22 @@ export interface BrandConfig {
   widgets_lead_capture?: boolean; widgets_ai_chat?: boolean;
   logo_url?: string | null; instagram_url?: string | null; facebook_url?: string | null;
 }
-export interface KorivaConfig {
+export interface Garrison365Config {
   gym: GymInfo; template: string; brand: BrandConfig;
   seo: { title?: string; description?: string; keywords?: string[]; og_image?: string };
 }
 
-const KORIVA_API = process.env.NEXT_PUBLIC_CODEGYM_URL || 'https://app.codegyms.com';
+const GARRISON365_API = process.env.NEXT_PUBLIC_CODEGYM_URL || 'https://app.codegyms.com';
 const GYM_SLUG   = process.env.NEXT_PUBLIC_GYM_SLUG;
 
-export async function getKorivaConfig(): Promise<KorivaConfig | null> {
+export async function getGarrison365Config(): Promise<Garrison365Config | null> {
   if (!GYM_SLUG) return null;
   try {
-    const res = await fetch(`${KORIVA_API}/api/site-config?slug=${GYM_SLUG}`, {
+    const res = await fetch(`${GARRISON365_API}/api/site-config?slug=${GYM_SLUG}`, {
       next: { revalidate: 60 },
     });
     if (!res.ok) return null;
-    return res.json() as Promise<KorivaConfig>;
+    return res.json() as Promise<Garrison365Config>;
   } catch { return null; }
 }
 
