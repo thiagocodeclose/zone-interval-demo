@@ -596,9 +596,22 @@ export function Garrison365LivePreview() {
       e.preventDefault();
       e.stopPropagation();
       const id = el.getAttribute("data-cg-el")!;
+      const computedColor = getComputedStyle(el).color;
+      const domRect = el.getBoundingClientRect();
+      const elRect = {
+        top: domRect.top,
+        left: domRect.left,
+        width: domRect.width,
+        height: domRect.height,
+        viewportWidth: window.innerWidth,
+        viewportHeight: window.innerHeight,
+      };
       refreshOverlay(id);
       window.parent.postMessage(
-        { type: "GARRISON365_ELEMENT_CLICK", payload: { id } },
+        {
+          type: "GARRISON365_ELEMENT_CLICK",
+          payload: { id, content: el.innerText.trim(), computedColor, rect: elRect },
+        },
         "*",
       );
     };
